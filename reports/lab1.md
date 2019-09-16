@@ -2,7 +2,7 @@
 
 ## Part A. Set Up a Breadboard
 
-![Breadboard](img/lab1/circuit.png)
+![Breadboard](../img/lab1/circuit.png)
 
 
 ## Part B. Manually Blink a LED
