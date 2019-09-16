@@ -66,58 +66,22 @@ int tempo[] = {
   12, 12, 12, 12,
   12, 12, 12, 12,
 };
-//Underworld melody
-int underworld_melody[] = {
-  NOTE_C4, NOTE_C5, NOTE_A3, NOTE_A4,
-  NOTE_AS3, NOTE_AS4, 0,
-  0,
-  NOTE_C4, NOTE_C5, NOTE_A3, NOTE_A4,
-  NOTE_AS3, NOTE_AS4, 0,
-  0,
-  NOTE_F3, NOTE_F4, NOTE_D3, NOTE_D4,
-  NOTE_DS3, NOTE_DS4, 0,
-  0,
-  NOTE_F3, NOTE_F4, NOTE_D3, NOTE_D4,
-  NOTE_DS3, NOTE_DS4, 0,
-  0, NOTE_DS4, NOTE_CS4, NOTE_D4,
-  NOTE_CS4, NOTE_DS4,
-  NOTE_DS4, NOTE_GS3,
-  NOTE_G3, NOTE_CS4,
-  NOTE_C4, NOTE_FS4, NOTE_F4, NOTE_E3, NOTE_AS4, NOTE_A4,
-  NOTE_GS4, NOTE_DS4, NOTE_B3,
-  NOTE_AS3, NOTE_A3, NOTE_GS3,
-  0, 0, 0
+// Feilure
+int feilure_melody[] = {
+  NOTE_C4, NOTE_B4, NOTE_AS4, NOTE_A4,
 };
-//Underwolrd tempo
-int underworld_tempo[] = {
-  12, 12, 12, 12,
-  12, 12, 6,
-  3,
-  12, 12, 12, 12,
-  12, 12, 6,
-  3,
-  12, 12, 12, 12,
-  12, 12, 6,
-  3,
-  12, 12, 12, 12,
-  12, 12, 6,
-  6, 18, 18, 18,
-  6, 6,
-  6, 6,
-  6, 6,
-  18, 18, 18, 18, 18, 18,
-  10, 10, 10,
-  10, 10, 10,
-  3, 3, 3
+// Feilure tempo
+int feilure_tempo[] = {
+  5, 5, 5, 2
 };
 
 void setup(void)
 {
   pinMode(3, OUTPUT);//buzzer
   pinMode(13, OUTPUT);//led indicator when singing a note
-    //sing the tunes
-  sing(1);
-  delay(3000);
+//    //sing the tunes
+//  sing(1);
+//  delay(3000);
   sing(2);
 
 }
@@ -130,16 +94,16 @@ void sing(int s) {
   // iterate over the notes of the melody:
   song = s;
   if (song == 2) {
-    Serial.println(" 'Underworld Theme'");
-    int size = sizeof(underworld_melody) / sizeof(int);
+    Serial.println(" 'Feilure Theme'");
+    int size = sizeof(feilure_melody) / sizeof(int);
     for (int thisNote = 0; thisNote < size; thisNote++) {
 
       // to calculate the note duration, take one second
       // divided by the note type.
       //e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
-      int noteDuration = 1000 / underworld_tempo[thisNote];
+      int noteDuration = 1000 / feilure_tempo[thisNote];
 
-      buzz(melodyPin, underworld_melody[thisNote], noteDuration);
+      buzz(melodyPin, feilure_melody[thisNote], noteDuration);
 
       // to distinguish the notes, set a minimum time between them.
       // the note's duration + 30% seems to work well:
