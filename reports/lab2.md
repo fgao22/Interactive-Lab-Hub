@@ -63,4 +63,6 @@ Star Wars
 
 **a. Make a short video showing how your timer works, and what happens when time is up!**
 
+[![Catch the Ball](https://img.youtube.com/vi/IUFlvdQyQvI/0.jpg)](https://www.youtube.com/watch?v=IUFlvdQyQvI&feature=youtu.be)
+
 **b. Post a link to the completed lab report your class hub GitHub repo.**

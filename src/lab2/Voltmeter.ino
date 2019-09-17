@@ -29,22 +29,19 @@
 
 #include <LiquidCrystal.h>
 
-int sensorPin = A3;    // select the input pin for the potentiometer
-int sensorValue = 0;  // variable to store the value coming from the sensor
-
-const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
-LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
-
+// the setup routine runs once when you press reset:
 void setup() {
-  // declare the ledPin as an OUTPUT:
-  lcd.print("hello, world!");
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
 }
 
+// the loop routine runs over and over again forever:
 void loop() {
-  // read the value from the sensor:
-  sensorValue = analogRead(sensorPin);
-  
-  lcd.print(sensorValue);
-//   lcd.display();
-//   delay(500);
+  // read the input on analog pin 0:
+  int sensorValue = analogRead(A0);
+  // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
+  float voltage = sensorValue * (5.0 / 1023.0);
+  // print out the value you read:
+  Serial.println(voltage);
+}
 }
