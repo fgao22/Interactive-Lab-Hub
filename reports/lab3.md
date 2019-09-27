@@ -46,7 +46,7 @@ Linear
  
 **a. Include your accelerometer read-out code in your write-up.**
 
-[Code](../src/lab3/Display.ino)
+[Code](../src/lab3/LCD.ino)
 
 ### 3. IR Proximity Sensor
 
@@ -54,9 +54,11 @@ Linear
 
 **b. Upload your merged code to your lab report repository and link to it here.**
 
-## Optional. Graphic Display
+## Graphic Display
 
 **Take a picture of your screen working insert it here!**
+
+![OLED](../img/lab3/oled.jpeg)
 
 ## Part D. Logging values to the EEPROM and reading them back
  
@@ -64,15 +66,36 @@ Linear
 
 **a. Does it matter what actions are assigned to which state? Why?**
 
+It does. The "clear" action should not be state 1. Otherwise, memory will be cleared on our way to read/write to memory.
+
 **b. Why is the code here all in the setup() functions and not in the loop() functions?**
+
+Because we only want to perform one operation (R/W/C) at each state switch. Otherwise, it will be a waste of I/O operations.
 
 **c. How many byte-sized data samples can you store on the Atmega328?**
 
+1024
+
 **d. How would you get analog data from the Arduino analog pins to be byte-sized? How about analog data from the I2C devices?**
+
+Need to divide by 4 because analog inputs range from 0 to 1023 and each byte of the EEPROM can only hold a value from 0 to 255.
+
+The analog data from I2C devices are 8 bytes in size, so we will need to divide by 8.
 
 **e. Alternately, how would we store the data if it were bigger than a byte? (hint: take a look at the [EEPROMPut](https://www.arduino.cc/en/Reference/EEPROMPut) example)**
 
+```
+eeAddress += sizeof(float);
+
+EEPROM.put(eeAddress, customVar);
+```
+
+We pass the address to the next byte after the data we want to store
+
 **Upload your modified code that takes in analog values from your sensors and prints them back out to the Arduino Serial Monitor.**
+
+[eeprom](../src/lab3/eeprom.ino)
+
 
 ### 2. Design your logger
  
