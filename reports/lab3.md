@@ -101,6 +101,10 @@ We pass the address to the next byte after the data we want to store
  
 **a. Insert here a copy of your final state diagram.**
 
+The following content refers to this online tutorial (https://randomnerdtutorials.com/arduino-temperature-data-logger-with-sd-card-module/)
+
+![sketch](../img/lab3/temperature-datalogger.png)
+
 ### 3. Create your data logger!
  
 **a. Record and upload a short demo video of your logger in action.**
