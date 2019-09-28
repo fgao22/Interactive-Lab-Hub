@@ -36,11 +36,16 @@ Linear
 
 **c. Can you change the LED fading code values so that you get the full range of output voltages from the LED when using your FSR?**
 
-
+Yes. `map(output, 0, 1023, 0, 255);`
 
 **d. What resistance do you need to have in series to get a reasonable range of voltages from each sensor?**
 
+10K Ohm
+
 **e. What kind of relationship does the resistance have as a function of stimulus? (e.g., linear?)**
+
+Flex: logarithmic
+Photo: Linear
 
 ### 2. Accelerometer
  
