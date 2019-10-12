@@ -7,8 +7,9 @@ To submit your lab, clone [this repository](https://github.com/FAR-Lab/IDD-Fa18-
 ## Part A. Actuating DC motors
 
 
-
 **Link to a video of your virbation motor**
+
+[![DC Motor](https://img.youtube.com/vi/B7mpdxQ5u3Q/1.jpg)](https://www.youtube.com/watch?v=B7mpdxQ5u3Q)
 
 ## Part B. Actuating Servo motors
 
@@ -28,7 +29,7 @@ Pin 9
 
 **b. What aspects of the Servo code control angle or speed?**
 
-The delay affects the speed of sweep. The range of angle we write to the Servo determines the angle of the sweep.
+The increment of the for loop affects the speed of sweep. The range of angle we write to the Servo determines the angle of the sweep.
 
 ## Part C. Integrating input and output
 
@@ -36,9 +37,12 @@ The delay affects the speed of sweep. The range of angle we write to the Servo d
 
 
 
+
 ## Part D. Paper puppet
 
 **a. Make a video of your proto puppet.**
+
+[youtube](https://www.youtube.com/watch?v=aeR-53hSo4c)
 
 ## Part E. Make it your own
 
